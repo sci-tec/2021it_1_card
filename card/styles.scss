@@ -1,0 +1,52 @@
+* {
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+}
+
+.buttons {
+    margin-right: 20px;
+}
+
+#board {
+    .player {
+        margin: 5px;
+        div {
+            font-size: 12px;
+        }
+        .title {
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .text {
+            font-size: 10px;
+        }
+    }
+    .card {
+        margin: 3px;
+        padding: 3px 6px;
+    }
+    #player1 {
+        .card {
+            background-color: #ccc;
+        }
+    }
+    #player2 {
+        .card {
+            background-color: #ccc;
+        }
+    }
+    #player3 {
+        .card {
+            background-color: #ccc;
+        }
+    }
+    #player4 {
+        .card {
+            background-color: #ccc;
+        }
+    }
+}

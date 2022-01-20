@@ -1,0 +1,53 @@
+* {
+  font-size: 20px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+#board .player {
+  margin: 5px;
+}
+
+#board .player div {
+  font-size: 12px;
+}
+
+#board .player .title {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#board .player .text {
+  font-size: 10px;
+}
+
+#board .card {
+  margin: 3px;
+  padding: 3px 6px;
+}
+
+#board #player1 .card {
+  background-color: #ccc;
+}
+
+#board #player2 .card {
+  background-color: #ccc;
+}
+
+#board #player3 .card {
+  background-color: #ccc;
+}
+
+#board #player4 .card {
+  background-color: #ccc;
+}
+/*# sourceMappingURL=styles.css.map */
