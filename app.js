@@ -1,5 +1,5 @@
 import CONFIG from "./config.js";
-import shuffle from "./CardEffect/08shuffle.js.js";
+import shuffle from "./CardEffect/08shuffle.js";
 
 let cards;
 let players;
