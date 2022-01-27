@@ -13,6 +13,9 @@ body {
 }
 
 #board .player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 5px;
 }
 
@@ -33,6 +36,12 @@ body {
 #board .card {
   margin: 3px;
   padding: 3px 6px;
+  width: calc( 150px);
+}
+
+#board .card img {
+  width: 100%;
+  height: 100%;
 }
 
 #board #player1 .card {
