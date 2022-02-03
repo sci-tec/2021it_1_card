@@ -8,10 +8,24 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+    <audio id="audio"></audio>
+        
+    <div id="popup">
+        <button>消す</button>
+    </div>
+
     <div class="buttons">
         <button id="btnReset">リセット</button><br>
         <button id="btnShowData">全データ表示</button>
@@ -24,25 +38,25 @@
         </div>
     </div>
     <div id="board">
-        <div id="player1name">player1</div>
         <div id="player1" class="player">
-            <div class="card"></div>
-            <div class="card"></div>
+            <div id="player1name">player1</div>
+            <div class="mat"></div>
+            <div class="deck"></div>
         </div>
-        <div id="player2name">player2</div>
         <div id="player2" class="player">
-            <div class="card"></div>
-            <div class="card"></div>
+            <div id="player2name">player2</div>
+            <div class="mat"></div>
+            <div class="deck"></div>
         </div>
-        <div id="player3name">player3</div>
         <div id="player3" class="player">
-            <div class="card"></div>
-            <div class="card"></div>
+            <div id="player3name">player3</div>
+            <div class="mat"></div>
+            <div class="deck"></div>
         </div>
-        <div id="player4name">player4</div>
         <div id="player4" class="player">
-            <div class="card"></div>
-            <div class="card"></div>
+            <div id="player4name">player4</div>
+            <div class="mat"></div>
+            <div class="deck"></div>
         </div>
     </div>
     <script type="module" src="app.js"></script>
