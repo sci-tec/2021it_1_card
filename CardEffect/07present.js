@@ -13,7 +13,7 @@ export default function() {
 
     if (sentaku == 0) {
         alert("プレゼントは猫でした。かわいいね")
-    }　else {
+    } else {
         alert("プレゼントは猫でした。いらないを選んだ人は敗北。")
     }
 }

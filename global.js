@@ -123,9 +123,27 @@ export default {
             }
         }
         return arr;
-    }
-        
+    },
 
+    setCoverByPlayerId: null,
+
+    coverAll: function() {
+        for (let i = 0; i < this.players.length; i++) {
+            this.setCoverByPlayerId(this.players[i].id, true);
+        }
+    },
+    hideCoverAll: function() {
+        for (let i = 0; i < this.players.length; i++) {
+            this.setCoverByPlayerId(this.players[i].id, false);
+        }
+    },
+    coverWithoutCurrentPlayer: function() {
+        for (let i = 0; i < this.players.length; i++) {
+            if(this.players[i]!=this.currentPlayer) {
+                this.setCoverByPlayerId(this.players[i].id, true);
+            }
+        }
+    },
 };
 
 
