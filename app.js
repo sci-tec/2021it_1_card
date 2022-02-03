@@ -3,6 +3,7 @@ import CONFIG from "./config.js";
 import shuffle from "./cardEffect/08shuffle.js";
 import present from "./cardEffect/07present.js";
 import cake from "./cardEffect/01cake.js";
+// import haiboku from "./cardEffect/03haiboku.js";
 
 import { develop } from "./develop.js";
 
@@ -40,7 +41,7 @@ function refresh() {
 
             let card = `<div class="card" data-cardid = "${G.players[i].cards[j].id}" data-imageid = "${G.players[i].cards[j].imgId}"><div class="title"><img src="${"images/image" + G.players[i].cards[j].imgId + ".jpg"}">${G.players[i].cards[j].title}</div><div class="text">${G.players[i].cards[j].text}</div></div>`;
 
-            console.log(card);
+            // console.log(card);
 
             $(`#player${i + 1} .deck`).append(card);
         }
@@ -92,6 +93,8 @@ function effect(imageid) {
         case 2:
             // doutoku(G.players)
             break;
+        case 3:
+            // haiboku(G.players)
         case 7:
             present(G.players)
             break;
@@ -99,7 +102,7 @@ function effect(imageid) {
             shuffle(G.players)
             break;
         default: 
-            cake();
+            present(G.players);
             break;
     }
     // addEventListeners();
@@ -112,8 +115,6 @@ function tts(text, p = 0) {
     speech.text = text;
     speech.rate = 1;
     speech.pitch = p;
-
-    console.log(speech);
 
     // const uttr = new SpeechSynthesisUtterance(text);
     speechSynthesis.speak(speech)
