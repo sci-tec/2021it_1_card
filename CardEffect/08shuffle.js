@@ -1,4 +1,5 @@
 import CONFIG from "../config.js"
+
 export default function(players) {
     let tehuda = [];
     let num = [];

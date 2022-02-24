@@ -1,9 +1,11 @@
 import G from "./global.js";
 import CONFIG from "./config.js";
-import shuffle from "./cardEffect/08shuffle.js";
-import present from "./cardEffect/07present.js";
+
 import cake from "./cardEffect/01cake.js";
-// import haiboku from "./cardEffect/03haiboku.js";
+import haiboku from "./cardEffect/03haiboku.js";
+import twitter from "./cardEffect/05twitter.js";
+import present from "./cardEffect/07present.js";
+import shuffle from "./cardEffect/08shuffle.js";
 
 import { develop } from "./develop.js";
 
@@ -94,15 +96,19 @@ function effect(imageid) {
             // doutoku(G.players)
             break;
         case 3:
-            // haiboku(G.players)
+            haiboku();
+            break;
+        case 5:
+            twitter();
+            break;
         case 7:
-            present(G.players)
+            present(G.players);
             break;
         case 8:
-            shuffle(G.players)
+            shuffle(G.players);
             break;
         default: 
-            present(G.players);
+            cake();
             break;
     }
     // addEventListeners();
