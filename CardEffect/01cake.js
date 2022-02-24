@@ -27,12 +27,33 @@ export default function() {
 
         // audio.src='./mp3/out.mp3';
         // audio.play();
+    
+        let cake = 0;
+        let death = 0;
 
         answers.map((d, i)=>{
             if(d.answerId==1) {
+                death += 1;
                 G.setCoverByPlayerId(i, true, {classes: "selected"})
+            } else {
+                cake += 1;
             }
         });
+        
+        console.log("死", death);
+        console.log("ケーキ", cake);
+
+        if(cake < death) {
+
+        } else if(cake > death) {
+
+            for(let i = 0; i <= G.players.length; i++) {
+                if(G.players[answers[i].id].winlose = null) {
+                    G.players[answers[i].id].winlose = "win";
+                }
+            }
+            console.log("playersInfo", G.players);
+        }
 
         let tm = setInterval((e)=>{
             clearTimeout(tm);
