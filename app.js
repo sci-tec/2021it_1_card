@@ -3,6 +3,7 @@ import CONFIG from "./config.js";
 
 import cake from "./cardEffect/01cake.js";
 import haiboku from "./cardEffect/03haiboku.js";
+import banana from "./cardEffect/04banana.js";
 import twitter from "./cardEffect/05twitter.js";
 import present from "./cardEffect/07present.js";
 import shuffle from "./cardEffect/08shuffle.js";
@@ -18,6 +19,7 @@ function init() {
     G.refresh = refresh;
     G.setCoverByPlayerId = setCoverByPlayerId;
     G.getAnswers = getAnswers;
+    G.showMessage = showMessage;
     G.reset();
     G.drawCard();
     G.refresh();
@@ -91,25 +93,28 @@ function effect(imageid) {
     switch (imageid) {
         case 1:
             cake();
-            break;
+        break;
         case 2:
             // doutoku(G.players)
-            break;
+        break;
         case 3:
             haiboku();
-            break;
+        break;
+        case 4:
+            banana();
+        break;
         case 5:
             twitter();
-            break;
+        break;
         case 7:
             present(G.players);
-            break;
+        break;
         case 8:
             shuffle(G.players);
-            break;
+        break;
         default: 
             cake();
-            break;
+        break;
     }
     // addEventListeners();
 }
@@ -161,4 +166,25 @@ function getAnswers(option, callback) {
             callback(i, optionid);
         });        
     }
+}
+
+function showMessage(option) {
+
+    console.log(option);
+
+    for (let i = 0; i < G.players.length; i++) {
+        console.log(i);
+        let text = `<div class="text" style="font-size: 40px;">${option.text}</div><div class="options"></div>`;
+        $(`#player${i + 1} .mat`).html(text);
+    }
+
+    let tm = setInterval(()=>{
+        for (let i = 0; i < G.players.length; i++) {
+            console.log(i);
+            $(`#player${i + 1} .mat`).html("");
+        }
+        clearInterval(tm);
+        G.hideCoverAll();
+    }, option.time);
+
 }
