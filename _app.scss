@@ -34,6 +34,8 @@ body {
         padding: 3px 6px;
         // padding: 10px;
 
+        background-color: #fff;
+
         width: calc( 150px );
         img {
             width: 100%;
@@ -43,24 +45,24 @@ body {
         // box-shadow: 0px 1px 4px #0005;
 
     }
-    #player1 {
-        .card {
-            background-color: #ccc;
-        }
-    }
-    #player2 {
-        .card {
-            background-color: #ccc;
-        }
-    }
-    #player3 {
-        .card {
-            background-color: #ccc;
-        }
-    }
-    #player4 {
-        .card {
-            background-color: #ccc;
-        }
-    }
+    // #player1 {
+    //     .card {
+    //         background-color: #ccc;
+    //     }
+    // }
+    // #player2 {
+    //     .card {
+    //         background-color: #ccc;
+    //     }
+    // }
+    // #player3 {
+    //     .card {
+    //         background-color: #ccc;
+    //     }
+    // }
+    // #player4 {
+    //     .card {
+    //         background-color: #ccc;
+    //     }
+    // }
 }

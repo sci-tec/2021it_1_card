@@ -2,11 +2,14 @@ import G from "./global.js";
 import CONFIG from "./config.js";
 
 import cake from "./cardEffect/01cake.js";
+import doutoku from "./cardEffect/02doutoku.js";
 import haiboku from "./cardEffect/03haiboku.js";
 import banana from "./cardEffect/04banana.js";
 import twitter from "./cardEffect/05twitter.js";
 import present from "./cardEffect/07present.js";
 import shuffle from "./cardEffect/08shuffle.js";
+import skip from "./cardEffect/10skip.js";
+// import reset from "./cardEffect/09reset";
 
 import { develop } from "./develop.js";
 
@@ -95,7 +98,7 @@ function effect(imageid) {
             cake();
         break;
         case 2:
-            // doutoku(G.players)
+            doutoku(G.players)
         break;
         case 3:
             haiboku();
@@ -107,11 +110,16 @@ function effect(imageid) {
             twitter();
         break;
         case 7:
-            present(G.players);
+            present();
         break;
         case 8:
             shuffle(G.players);
         break;
+        case 9:
+            // reset();
+        break;
+        case 10:
+            skip();
         default: 
             cake();
         break;
@@ -173,14 +181,14 @@ function showMessage(option) {
     console.log(option);
 
     for (let i = 0; i < G.players.length; i++) {
-        console.log(i);
+        // console.log(i);
         let text = `<div class="text" style="font-size: 40px;">${option.text}</div><div class="options"></div>`;
         $(`#player${i + 1} .mat`).html(text);
     }
 
     let tm = setInterval(()=>{
         for (let i = 0; i < G.players.length; i++) {
-            console.log(i);
+            // console.log(i);
             $(`#player${i + 1} .mat`).html("");
         }
         clearInterval(tm);

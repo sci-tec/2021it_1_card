@@ -4,6 +4,8 @@ import CONFIG from "../config.js";
 export default function () {
 
     G.coverAll();
+
+    
     
     let nakami = ["cat", "snake"];
     let r = Math.floor(Math.random() * nakami.length);
@@ -21,7 +23,7 @@ export default function () {
 
     G.getAnswers(option, (id, answerId) => {
         answers.push({ id: id, answerId: answerId });
-        if (answers.length >= G.players.length) {
+        if (answers.length >= (G.players.length - G.losePlayers.length)) {
             judge();
         }
     });
@@ -32,18 +34,39 @@ export default function () {
         // audio.play();
 
         answers.map((d, i) => {
+
             if (nakami[r] == "cat") {
+                
                 if (d.answerId == 1) {
                     G.setCoverByPlayerId(i, true, { classes: "selected" })
                     console.log(nakami[r])
-                    G.players[answers[i].id].winlose = "lose";
+                
+                    if(G.players[i].winlose == null) {
+                        G.setPlayerLoseById(i);
+                    }
                 }
+
+                G.showMessage({
+                    text: "プレゼントは「猫」でした。いらないを選んだ人は敗北。",
+                    time: 4000
+                });
+
             } else {
+
                 if (d.answerId == 0) {
                     G.setCoverByPlayerId(i, true, { classes: "selected" })
                     console.log(nakami[r])
-                    G.players[answers[i].id].winlose = "lose";
+
+                    if(G.players[i].winlose == null) {
+                        G.setPlayerLoseById(i);
+                    }
                 }
+
+                G.showMessage({
+                    text: "プレゼントは「ヘビ」でした。いるを選んだ人は敗北。",
+                    time: 4000
+                });
+
             }
         });
         
