@@ -5,6 +5,8 @@ export default {
     cards: [],
     players: [],
     usedCards: [],
+    losePlayers: [],
+    winPlayers: [],
     currentPlayer: null,
 
     refresh: null,
@@ -69,6 +71,12 @@ export default {
 
     setPlayerLoseById: function(id) {
         this.getPlayerById(id).winlose = "lose";
+        if(this.getPlayerById(id).winlose = "lose") {
+            this.losePlayers.push(this.getPlayerById(id));
+            this.setCoverByPlayerId(id);
+        }
+        console.log("losePlayer", this.losePlayers);
+
     },
     
     getNextPlayer: function(){
@@ -88,6 +96,12 @@ export default {
 
     setPlayerWinById: function(id) {
         this.getPlayerById(id).winlose = "win";
+        if(this.getPlayerById(id).winlose = "win") {
+            this.winPlayers.push(this.getPlayerById(id));
+            this.setCoverByPlayerId(id);
+        }    
+
+        this.coverAll("ゲーム終了")
     },
     
     getPlayerIdByCardId: function(Id) {
@@ -145,5 +159,4 @@ export default {
         }
     },
 };
-
 

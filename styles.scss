@@ -1,2 +1,20 @@
 @import "./_app.scss";
 @import "./_popup.scss";
+
+body {
+    background-image: url("images/vintage253-1280x720.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    // background-position: center;
+
+
+    .board {
+        display: flex;
+        .player {
+
+            .card {
+                border: 3px solid #ff6;
+            }
+        }
+    }
+}

@@ -18,7 +18,7 @@ export default function() {
 
     G.getAnswers(option, (id, answerId)=>{
         answers.push({ id: id, answerId: answerId });
-        if(answers.length >= G.players.length) {
+        if(answers.length >= G.players.length -1) {
             judge();
         }
     });
@@ -39,17 +39,31 @@ export default function() {
                 cake += 1;
             }
         });
-        
         console.log("死", death);
         console.log("ケーキ", cake);
 
+        // 過半数のプレイヤーが死を選んだ場合、あなたは敗北する。
+        // 過半数がケーキを選んだ場合、死を選んだ人が敗北。
+        // 同数だった場合、あなたは勝利する。
+        
         if(cake < death) {
 
-        } else if(cake > death) {
+            G.setPlayerLoseById(G.currentPlayer.id);
 
+        } else if(cake > death) {
+            
+            for(let i = 0; i < answers.length; i++) {
+                if(answers[i].answerId == 1) {
+                    G.setPlayerLoseById(i);
+                }
+            }
+            console.log(answers)
+
+        } else {
             for(let i = 0; i <= G.players.length; i++) {
                 if(G.players[answers[i].id].winlose = null) {
                     G.players[answers[i].id].winlose = "win";
+                    G.setPlayerWinById(i);
                 }
             }
             console.log("playersInfo", G.players);

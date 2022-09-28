@@ -3,8 +3,6 @@
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -15,112 +13,67 @@ body {
 #board .player {
   margin: 5px;
 }
-
 #board .player div {
   font-size: 12px;
 }
-
 #board .player .title {
   margin-top: 5px;
   font-size: 14px;
   font-weight: bold;
 }
-
 #board .player .text {
   font-size: 10px;
 }
-
 #board .card {
   margin: 3px;
   padding: 3px 6px;
-  width: calc( 150px);
+  background-color: #fff;
+  width: 150px;
 }
-
 #board .card img {
   width: 100%;
   height: 100%;
 }
 
-#board #player1 .card {
-  background-color: #ccc;
-}
-
-#board #player2 .card {
-  background-color: #ccc;
-}
-
-#board #player3 .card {
-  background-color: #ccc;
-}
-
-#board #player4 .card {
-  background-color: #ccc;
-}
-
 #board {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
 }
-
 #board .player {
   position: relative;
   height: 100%;
 }
-
 #board .player .deck {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: 5px;
 }
-
 #board .player .mat {
-  font-family: 'DotGothic16', sans-serif;
+  font-family: "DotGothic16", sans-serif;
   position: absolute;
-  background-color: #000d;
+  background-color: rgba(0, 0, 0, 0.8666666667);
   width: 100%;
   height: 100%;
   color: #fff;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
-
 #board .player .mat h2 {
   font-size: 36px;
   line-height: 100%;
   display: block;
   margin: 0;
 }
-
 #board .player .mat .text {
   margin: 20px 0;
   font-size: 24px;
 }
-
 #board .player .mat .options {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 #board .player .mat .options .button {
   line-height: 100%;
   font-size: 30px;
@@ -132,36 +85,33 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-
 #board .player .mat .options .button:hover {
   background-color: #aaa;
   color: #000;
 }
-
 #board .player .selected {
   background-color: #f00;
-}
-
-#board #player2 .card {
-  background-color: #5553;
-}
-
-#board #player3 .card {
-  background-color: #5553;
-}
-
-#board #player4 .card {
-  background-color: #5553;
 }
 
 #popup {
   position: fixed;
   font-size: 50px;
-  background-color: #000a;
+  background-color: rgba(0, 0, 0, 0.6666666667);
   width: 100%;
   height: 100%;
   color: #fff;
-  padding: calc( 30% - 20px);
+  padding: calc(30% - 20px);
   display: none;
 }
-/*# sourceMappingURL=styles.css.map */
+
+body {
+  background-image: url("images/vintage253-1280x720.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body .board {
+  display: flex;
+}
+body .board .player .card {
+  border: 3px solid #ff6;
+}/*# sourceMappingURL=styles.css.map */
