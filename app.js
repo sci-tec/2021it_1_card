@@ -90,6 +90,10 @@ function addEventListeners() {
         tts(text, 2);
     });
 
+    $("#title .btn").click(()=>{
+        $("#title").hide();
+    });
+
 }
 
 function clickEvent() {

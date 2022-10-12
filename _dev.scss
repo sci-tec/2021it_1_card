@@ -1,0 +1,23 @@
+.buttons {
+    position: fixed;
+    background-color: #0008;
+    z-index: 100;
+    right: 0px;
+    bottom: 0px;
+    padding: 5px;
+    input, button {
+        margin-bottom: 3px;
+    }
+}
+
+#title {
+    display: flex;
+    font-size: 100%;
+    img {
+        width: 50%;
+    }    
+    .btn {
+        width: auto;
+        padding: 5px 20px;
+    }
+}
