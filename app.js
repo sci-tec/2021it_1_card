@@ -26,9 +26,10 @@ function init() {
     G.reset();
     G.drawCard();
     G.refresh();
-    $(`.mat`).hide();
+    // $(`.mat`).hide();
 
     addEventListeners();
+    clickEvent();
 }
 
 function refresh() {
@@ -46,7 +47,7 @@ function refresh() {
         for (let j = 0; j < G.players[i].cards.length; j++) {
             // console.log(i, j, G.players[i].cards[j]);
 
-            let card = `<div class="card" data-cardid = "${G.players[i].cards[j].id}" data-imageid = "${G.players[i].cards[j].imgId}"><div class="title"><img src="${"images/image" + G.players[i].cards[j].imgId + ".jpg"}">${G.players[i].cards[j].title}</div><div class="text">${G.players[i].cards[j].text}</div></div>`;
+            let card = `<div class="card" data-cardid = "${G.players[i].cards[j].id}" data-imageid = "${G.players[i].cards[j].imgId}"><div class="title"><img src="${"images/image" + G.players[i].cards[j].imgId + ".jpg"}"></div></div>`;
 
             // console.log(card);
 
@@ -54,7 +55,6 @@ function refresh() {
         }
     }
 }
-
 
 function addEventListeners() {
     // let num;
@@ -66,7 +66,7 @@ function addEventListeners() {
     $(document).on('click', '.card', function () {
 
 
-        console.log("this.", $(this).data("cardid"));
+        // console.log("this.", $(this).data("cardid"));
         let cardid = $(this).data("cardid");
         let imageid = $(this).data("imageid");
 
@@ -90,6 +90,27 @@ function addEventListeners() {
         tts(text, 2);
     });
 
+}
+
+function clickEvent() {
+    $(".btn1").click(function(){
+        $("#rule").css("display", "block")
+        console.log("btn-click!");
+    });
+
+    $(".btn2").click(function(){
+        $("#rule").css("display", "none");
+        console.log("btn-click!");
+    });
+
+    $(".btn3").click(()=>{
+        $("#title").css("animation", "slide-out-anim 4.0s ease-out forwards");
+    });
+
+    $(".card").click(()=>{
+        $(".field .left").html();
+        console.log("card-click");
+    });
 }
 
 function effect(imageid) {
@@ -119,9 +140,10 @@ function effect(imageid) {
             // reset();
         break;
         case 10:
-            skip();
+            skip(G.players);
+        break;
         default: 
-            cake();
+            banana();
         break;
     }
     // addEventListeners();
@@ -160,17 +182,17 @@ function getAnswers(option, callback) {
     console.log(option, callback);
     for (let i = 0; i < G.players.length; i++) {
         let text = `<h2>【${option.title}】</h2><div class="text">${option.text}</div><div class="options"></div>`;
-        $(`#player${i + 1} .mat`).html(text);
+        $(`#board .text`).html(text);
 
         for(let j=0; j < option.options.length; j++) {
             let btn = `<div class="button" data-optionid="${j}">${option.options[j]}</div>`;
-            $(`#player${i + 1} .mat .options`).append(btn)
+            $(`#board .text .options`).append(btn)
         }
 
-        $(`#player${i + 1} .mat .options .button`).click((e)=>{
+        $(`#board .text .options .button`).click((e)=>{
             let text = $(e.currentTarget).html();
             let optionid = $(e.currentTarget).data("optionid");
-            $(`#player${i + 1} .mat .options`).html(`<h2>回答: ${text}</h2>`);
+            $(`#board .text .options`).html(`<h2>回答: ${text}</h2>`);
             callback(i, optionid);
         });        
     }
@@ -183,13 +205,13 @@ function showMessage(option) {
     for (let i = 0; i < G.players.length; i++) {
         // console.log(i);
         let text = `<div class="text" style="font-size: 40px;">${option.text}</div><div class="options"></div>`;
-        $(`#player${i + 1} .mat`).html(text);
+        $(`#board .text`).html(text);
     }
 
     let tm = setInterval(()=>{
         for (let i = 0; i < G.players.length; i++) {
             // console.log(i);
-            $(`#player${i + 1} .mat`).html("");
+            $(`#board .text`).html("");
         }
         clearInterval(tm);
         G.hideCoverAll();
