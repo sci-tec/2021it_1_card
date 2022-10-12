@@ -1,3 +1,27 @@
+.buttons {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5333333333);
+  z-index: 100;
+  right: 0px;
+  bottom: 0px;
+  padding: 5px;
+}
+.buttons input, .buttons button {
+  margin-bottom: 3px;
+}
+
+#title {
+  display: flex;
+  font-size: 100%;
+}
+#title img {
+  width: 50%;
+}
+#title .btn {
+  width: auto;
+  padding: 5px 20px;
+}
+
 html {
   height: 100%;
 }
