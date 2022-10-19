@@ -189,7 +189,7 @@ function getAnswers(option, callback) {
         $(`#board .text`).html(text);
 
         for(let j=0; j < option.options.length; j++) {
-            let btn = `<div class="button" data-optionid="${j}">${option.options[j]}</div>`;
+            let btn = `<div class="button btn btnChoice" data-optionid="${j}">${option.options[j]}</div>`;
             $(`#board .text .options`).append(btn)
         }
 
