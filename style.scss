@@ -1,6 +1,6 @@
 // @import "./_app.scss";
 // @import "./_popup.scss";
-@import "./dev.scss";
+@import "./_dev.scss";
 
 html{
     height: 100%;
@@ -23,6 +23,12 @@ body {
         background-color: burlywood;
         cursor: pointer;
     }
+    
+    .btnChoice {
+        width: auto;
+        margin: 3px;
+        box-sizing: border-box;
+    }
 
     .container {
         height: 100%;
@@ -43,7 +49,7 @@ body {
             align-items: center;
 
             color: white;
-            background-color:yellowgreen;
+            background-image:url("./images/common/card haikei.jpg");
         }
 
 
