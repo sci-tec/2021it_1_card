@@ -12,8 +12,9 @@ body {
 
     .btn{
         text-align: center;
-        width: 10%;
-        padding: 3px;
+        // width: auto;
+        padding: 5px 10px;
+        display: inline-block;
 
         border-radius: 2.5rem;
         color: white;
@@ -28,6 +29,10 @@ body {
         width: auto;
         margin: 3px;
         box-sizing: border-box;
+    }
+
+    .btn2 {
+        margin: 0 auto;
     }
 
     .container {
@@ -52,12 +57,12 @@ body {
             background-image:url("./images/common/card haikei.jpg");
         }
 
-
         #play {
-            background-color: white;
+            // background-color: white;
             .bar {
-                background-image: url("images/logo.png");
+                background-image: url("images/common/logo.png");
                 background-repeat: no-repeat;
+                background-attachment: fixed;
                 background-color: yellowgreen;
                 
                 display: flex;
@@ -75,7 +80,7 @@ body {
                     width: auto;
         
                     text-align: center;
-                    
+            
                 }
             }
         
@@ -97,6 +102,30 @@ body {
                         width: 20%;
                         padding: 3px;
                         border-right: 2px solid #000;
+
+                        .card {
+
+                            margin: 5px;
+                            padding: 4px 5px;
+                    
+                            background-color:whitesmoke;
+                    
+                            // width: calc( 100px );
+                            // img {
+                            //     width: 100%;
+                            //     height: 100%;
+                            // }
+                            border-radius: 5px;
+                            box-shadow: 0px 1px 5px #0009;
+
+                            .title {
+                                img {
+                                    width: 100%;
+                                }
+                            }
+    
+                        }
+
                     }
         
                     .right {
@@ -154,9 +183,8 @@ body {
                             }
                             border-radius: 5px;
                             box-shadow: 0px 1px 5px #0009;
-                    
                         }                
-                        }
+                    }
                 }
             }
         
@@ -169,6 +197,15 @@ body {
             color: aliceblue;
             background-color:#0009;
         }
+
+        #win {
+            display: none;
+        }
+        
+        #lose {
+            display: none;
+        }
+
     }
 }
 

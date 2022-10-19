@@ -92,6 +92,8 @@ export default {
          } else {
             this.currentPlayer = this.players[nextId]
          }
+         
+         return nextId;
     },
 
     setPlayerWinById: function(id) {
@@ -121,6 +123,7 @@ export default {
         let card = this.players[playerId].cards.splice(cId, 1)[0];
         this.usedCards.push(card);
         console.log(this.usedCards);
+        return card;
     },
     
     drawCard: function() {
