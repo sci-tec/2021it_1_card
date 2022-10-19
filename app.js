@@ -16,6 +16,7 @@ import { develop } from "./develop.js";
 $(() => {
     init();
     develop();
+
 })
 
 function init() {
@@ -65,16 +66,17 @@ function addEventListeners() {
 
     $(document).on('click', '.card', function () {
 
-
         // console.log("this.", $(this).data("cardid"));
         let cardid = $(this).data("cardid");
         let imageid = $(this).data("imageid");
 
-        console.log(G.getPlayerIdByCardId(cardid)[0], cardid, imageid)
+        console.log("playerCardId=", G.getPlayerIdByCardId(cardid)[0], "cardId=", cardid, "imageId=", imageid)
         if (G.currentPlayer.id == G.getPlayerIdByCardId(cardid)[0]) {
 
             // cardplay(cardid);
-            G.useCard(cardid);
+            let card = G.useCard(cardid);
+            showPreviewCard(card);
+
             effect(imageid);
             G.getNextPlayer();
             G.drawCard();
@@ -111,10 +113,6 @@ function clickEvent() {
         $("#title").css("animation", "slide-out-anim 4.0s ease-out forwards");
     });
 
-    $(".card").click(()=>{
-        $(".field .left").html();
-        console.log("card-click");
-    });
 }
 
 function effect(imageid) {
@@ -147,7 +145,7 @@ function effect(imageid) {
             skip(G.players);
         break;
         default: 
-            banana();
+            // banana();
         break;
     }
     // addEventListeners();
@@ -221,4 +219,21 @@ function showMessage(option) {
         G.hideCoverAll();
     }, option.time);
 
+}
+
+function showPreviewCard(card) {
+    
+    let html;
+
+    if(card.canPreview == false) {
+        html = `<div class="card" data-cardid = "${card.id}" data-imageid = "${card.imgId}"><div class="title"><img src="${"images/image" + card.imgId + ".jpg"}">${card.title}</div></div>`;
+    } else {
+        html = `<div class="card" data-cardid = "${card.id}" data-imageid = "${card.imgId}"><div class="title"><img src="${"images/image" + card.imgId + ".jpg"}">${card.title}</div><div class="text">${card.text}</div></div>`;
+    }
+
+    $(`#previewCardUsisng`).html(html);
+}
+
+function showNextPlayer() {
+    G.getNextPlayer(next)
 }

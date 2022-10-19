@@ -37,10 +37,10 @@
                 <div class="left"></div>
                 <div class="btn1 btn">ルール説明</div>
             </div>
-            <div class="nextPlayer"></div>
             <div id="board">
+                <div class="nextPlayer">NEXT-> player2</div>
                 <div class="field">
-                    <div class="left">使用カード</div>
+                    <div id="previewCardUsisng" class="left">使用カード</div>
                     <div class="right">
                         <div class="text"></div>
                         <div class="players">
@@ -61,7 +61,7 @@
 
         <!-- タイトル画面 -->
         <!-- <div id="title" class="scene">
-            <img src="images/logo.png" width="40%">
+            <img src="images/common/logo.png" width="40%">
             <h2 class="btn3 btn">START</h2>
             <h2 class="btn1 btn">HELP</h2>
         </div> -->
@@ -75,8 +75,21 @@
         <div id="title" class="scene">
             
             <img src="./images/common/logo.png" alt="">
-            <div class="btn">クリックでスタート</div>
+            <div class="btn3 btn">クリックでスタート</div>
         </div>
+
+        <!-- 勝ち画面 -->
+        <div id="win" class="scene">
+            <h1>勝ちました！</h1>
+            <div class="btn">タイトルに戻る</div>
+        </div>
+
+        <!-- 負け画面 -->
+        <div id="lose" class="scene">
+            <h1>負けました。。。</h1>
+            <div class="btn">タイトルに戻る</div>
+        </div>
+        
 
 
     </div>
