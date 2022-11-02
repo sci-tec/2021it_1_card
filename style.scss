@@ -240,10 +240,23 @@ body {
 
             color: aliceblue;
             background-color:#0009;
+            .btn2{
+                position: fixed;
+                top:50px;
+                right:50px;
+
+            }
             .card{
+                .name{
+        
+                display:flex;
+                // flex-wrap: wrap;
+                // justify-content: space-between;
+                }
                 img{
-                    width: 10%;
-                    height: 10%;
+                    width: 160px;
+                    height: 210px;
+                    margin: 20px;
                 }
             }
         }

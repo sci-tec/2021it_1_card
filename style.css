@@ -54,12 +54,10 @@ body #rule {
 body .btn2 {
   margin: 0 auto;
 }
-
 body .btn4 {
   position: relative;
   top: 50%;
 }
-
 body .container {
   height: 100%;
   position: relative;
@@ -203,30 +201,34 @@ body .container #rule {
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.6);
 }
+body .container #rule .btn2 {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+body .container #rule .card .name {
+  display: flex;
+}
 body .container #rule .card img {
-  width: 10%;
-  height: 10%;
+  width: 160px;
+  height: 210px;
+  margin: 20px;
 }
 body .container #win {
   display: none;
 }
 body .container #lose {
   display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background-color: #000;
   overflow: hidden;
 }
-
 body .container #lose h1 {
   position: relative;
   top: 40%;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: "Montserrat", Arial, sans-serif;
   font-size: calc(20px + 5vw);
   font-weight: 700;
   color: #fff;
@@ -238,22 +240,18 @@ body .container #lose h1 {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
-  -webkit-filter: blur(0.007em);
-          filter: blur(0.007em);
+  filter: blur(0.007em);
   -webkit-animation: shake 2.5s linear forwards;
           animation: shake 2.5s linear forwards;
 }
-
 body .container #lose h1 span {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
   clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
 }
-
 body .container #lose h1::before,
 body .container #lose h1::after {
   content: attr(data-text);
@@ -261,128 +259,92 @@ body .container #lose h1::after {
   top: 50%;
   left: 50%;
 }
-
 body .container #lose h1::before {
   -webkit-animation: crack1 2.5s linear forwards;
           animation: crack1 2.5s linear forwards;
   -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
   clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
 }
-
 body .container #lose h1::after {
   -webkit-animation: crack2 2.5s linear forwards;
           animation: crack2 2.5s linear forwards;
   -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
   clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
 }
-
 @-webkit-keyframes shake {
   5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
-    -webkit-filter: blur(0.018em);
-            filter: blur(0.018em);
-    -webkit-transform: translateY(0.018em) rotate(0deg);
-            transform: translateY(0.018em) rotate(0deg);
+    filter: blur(0.018em);
+    transform: translateY(0.018em) rotate(0deg);
   }
   10%, 30%, 40%, 50%, 70%, 80%, 90% {
-    -webkit-filter: blur(0.01em);
-            filter: blur(0.01em);
-    -webkit-transform: translateY(-0.018em) rotate(0deg);
-            transform: translateY(-0.018em) rotate(0deg);
+    filter: blur(0.01em);
+    transform: translateY(-0.018em) rotate(0deg);
   }
   20%, 60% {
-    -webkit-filter: blur(0.03em);
-            filter: blur(0.03em);
-    -webkit-transform: translate(-0.018em, 0.018em) rotate(0deg);
-            transform: translate(-0.018em, 0.018em) rotate(0deg);
+    filter: blur(0.03em);
+    transform: translate(-0.018em, 0.018em) rotate(0deg);
   }
   45%, 85% {
-    -webkit-filter: blur(0.03em);
-            filter: blur(0.03em);
-    -webkit-transform: translate(0.018em, -0.018em) rotate(0deg);
-            transform: translate(0.018em, -0.018em) rotate(0deg);
+    filter: blur(0.03em);
+    transform: translate(0.018em, -0.018em) rotate(0deg);
   }
   100% {
-    -webkit-filter: blur(0.007em);
-            filter: blur(0.007em);
-    -webkit-transform: translate(0) rotate(-0.5deg);
-            transform: translate(0) rotate(-0.5deg);
+    filter: blur(0.007em);
+    transform: translate(0) rotate(-0.5deg);
   }
 }
-
 @keyframes shake {
   5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
-    -webkit-filter: blur(0.018em);
-            filter: blur(0.018em);
-    -webkit-transform: translateY(0.018em) rotate(0deg);
-            transform: translateY(0.018em) rotate(0deg);
+    filter: blur(0.018em);
+    transform: translateY(0.018em) rotate(0deg);
   }
   10%, 30%, 40%, 50%, 70%, 80%, 90% {
-    -webkit-filter: blur(0.01em);
-            filter: blur(0.01em);
-    -webkit-transform: translateY(-0.018em) rotate(0deg);
-            transform: translateY(-0.018em) rotate(0deg);
+    filter: blur(0.01em);
+    transform: translateY(-0.018em) rotate(0deg);
   }
   20%, 60% {
-    -webkit-filter: blur(0.03em);
-            filter: blur(0.03em);
-    -webkit-transform: translate(-0.018em, 0.018em) rotate(0deg);
-            transform: translate(-0.018em, 0.018em) rotate(0deg);
+    filter: blur(0.03em);
+    transform: translate(-0.018em, 0.018em) rotate(0deg);
   }
   45%, 85% {
-    -webkit-filter: blur(0.03em);
-            filter: blur(0.03em);
-    -webkit-transform: translate(0.018em, -0.018em) rotate(0deg);
-            transform: translate(0.018em, -0.018em) rotate(0deg);
+    filter: blur(0.03em);
+    transform: translate(0.018em, -0.018em) rotate(0deg);
   }
   100% {
-    -webkit-filter: blur(0.007em);
-            filter: blur(0.007em);
-    -webkit-transform: translate(0) rotate(-0.5deg);
-            transform: translate(0) rotate(-0.5deg);
+    filter: blur(0.007em);
+    transform: translate(0) rotate(-0.5deg);
   }
 }
-
 @-webkit-keyframes crack1 {
   0%, 95% {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
-    -webkit-transform: translate(-51%, -48%);
-            transform: translate(-51%, -48%);
+    transform: translate(-51%, -48%);
   }
 }
-
 @keyframes crack1 {
   0%, 95% {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
-    -webkit-transform: translate(-51%, -48%);
-            transform: translate(-51%, -48%);
+    transform: translate(-51%, -48%);
   }
 }
-
 @-webkit-keyframes crack2 {
   0%, 95% {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
-    -webkit-transform: translate(-49%, -53%);
-            transform: translate(-49%, -53%);
+    transform: translate(-49%, -53%);
   }
 }
-
 @keyframes crack2 {
   0%, 95% {
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
-    -webkit-transform: translate(-49%, -53%);
-            transform: translate(-49%, -53%);
+    transform: translate(-49%, -53%);
   }
 }
 
