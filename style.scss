@@ -71,6 +71,9 @@ body {
         #play {
             // background-color: white;
             .bar {
+                background-image: url("images/common/logo.png");
+                background-repeat: no-repeat;
+                background-size: contain;
                 background-color: yellowgreen;
                 
                 display: flex;
@@ -228,7 +231,7 @@ body {
             display: none;
 
             color: aliceblue;
-            background-color:#0009;
+            background-color:#0009;          
         }
 
         #win {
