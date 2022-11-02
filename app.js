@@ -183,17 +183,17 @@ function getAnswers(option, callback) {
     console.log(option, callback);
     for (let i = 0; i < G.players.length; i++) {
         let text = `<h2>【${option.title}】</h2><div class="text">${option.text}</div><div class="options"></div>`;
-        $(`#board .text`).html(text);
+        $(`#board .txt`).html(text);
 
         for(let j=0; j < option.options.length; j++) {
             let btn = `<div class="button btn btnChoice" data-optionid="${j}">${option.options[j]}</div>`;
-            $(`#board .text .options`).append(btn)
+            $(`#board .txt .options`).append(btn)
         }
 
-        $(`#board .text .options .button`).click((e)=>{
+        $(`#board .txt .options .button`).click((e)=>{
             let text = $(e.currentTarget).html();
             let optionid = $(e.currentTarget).data("optionid");
-            $(`#board .text .options`).html(`<h2>回答: ${text}</h2>`);
+            $(`#board .txt .options`).html(`<h2>回答: ${text}</h2>`);
             callback(i, optionid);
         });        
     }
@@ -206,7 +206,7 @@ function showMessage(option) {
     for (let i = 0; i < G.players.length; i++) {
         // console.log(i);
         let text = `<div>${option.text}</div><div class="options"></div>`;
-        $(`#board .text`).html(text);
+        $(`#board .txt`).html(text);
         $(`#board .text2`).html(text);
     }
 
@@ -236,8 +236,11 @@ function showPreviewCard(card) {
 }
 
 function showNextPlayer() {
-    let nextPlayer = G.getPlayerById(G.getNextPlayerId()).name;
-    console.log("nextPlayer", nextPlayer);
+    // let nextPlayer = G.getPlayerById(G.getNextPlayerId()).name;
+    // console.log("nextPlayer", nextPlayer);
+    // $(".nextPlayer").html("NextPlayer ➡ " + nextPlayer);
 
-    $(".nextPlayer").html("NextPlayer ➡ " + nextPlayer);
+    $("#board .players .p").css("background-color", "#deb887");
+    $("#board .players .player"+(G.currentPlayer.id+1)).css("background-color", "#cd853f");
+
 }
