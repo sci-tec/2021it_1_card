@@ -1,27 +1,22 @@
 .buttons {
   position: fixed;
-  background-color: #0008;
+  background-color: rgba(0, 0, 0, 0.5333333333);
   z-index: 100;
   right: 0px;
   bottom: 0px;
   padding: 5px;
 }
-
 .buttons input, .buttons button {
   margin-bottom: 3px;
 }
 
 #title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 100%;
 }
-
 #title img {
   width: 50%;
 }
-
 #title .btn {
   width: auto;
   padding: 5px 20px;
@@ -35,7 +30,6 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body .btn {
   text-align: center;
   padding: 5px 10px;
@@ -44,92 +38,64 @@ body .btn {
   color: white;
   background-color: cadetblue;
 }
-
 body .btn:hover {
   background-color: burlywood;
   cursor: pointer;
 }
-
 body .btnChoice {
   font-size: 16px;
   width: 100px;
   margin: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-
+body #rule {
+  overflow: scroll;
+}
 body .btn2 {
   margin: 0 auto;
 }
-
 body .container {
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-
 body .container .scene {
   height: 100%;
   width: 100%;
   position: absolute;
 }
-
 body .container .winlose {
   color: white;
   background-color: yellowgreen;
   margin: auto;
   text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-around;
+  align-items: center;
 }
-
 body .container #title {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   color: white;
   background-image: url("./images/common/card haikei.jpg");
 }
-
 body .container #play .bar {
   background-image: url("images/common/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: yellowgreen;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   height: 40px;
   width: 100%;
 }
-
 body .container #play .bar .left {
   width: auto;
   overflow: hidden;
 }
-
 body .container #play .bar .right {
   background-color: white;
   border-radius: 2.5rem;
@@ -137,90 +103,60 @@ body .container #play .bar .right {
   width: auto;
   text-align: center;
 }
-
 body .container #play #board {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
-
 body .container #play #board .nextPlayer {
   font-weight: bold;
   border-bottom: lightblue solid 3px;
   padding: 3px 5px;
   width: 60%;
 }
-
 body .container #play #board .field {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   height: 100%;
   width: 100%;
 }
-
 body .container #play #board .field .left {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 380px;
   width: 20%;
   padding: 3px;
   border-right: 2px solid #000;
 }
-
 body .container #play #board .field .left .card {
   margin: 5px;
   padding: 4px 5px;
   background-color: whitesmoke;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 1px 5px #0009;
-          box-shadow: 0px 1px 5px #0009;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6);
 }
-
 body .container #play #board .field .left .card .title img {
   width: 100%;
 }
-
 body .container #play #board .field .left .card:hover {
   cursor: pointer;
 }
-
 body .container #play #board .field .right {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   height: 400px;
   width: 80%;
   padding: 3px;
 }
-
 body .container #play #board .field .right .text {
   font-size: 30px;
   font-weight: bold;
 }
-
 body .container #play #board .field .right .players {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 20%;
   margin: 50px;
 }
-
 body .container #play #board .field .right .players .p {
   background-color: burlywood;
   border-radius: 2.5rem;
@@ -230,10 +166,8 @@ body .container #play #board .field .right .players .p {
   width: 100%;
   font-weight: bold;
 }
-
 body .container #play #board .player {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: cadetblue;
   border-radius: 2.5rem;
   margin: 10px;
@@ -241,41 +175,35 @@ body .container #play #board .player {
   height: 200px;
   width: 70%;
 }
-
 body .container #play #board .player .deck {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
-
 body .container #play #board .player .deck .card {
   margin: 5px;
   padding: 4px 5px;
   background-color: whitesmoke;
-  width: calc( 100px);
+  width: 100px;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 1px 5px #0009;
-          box-shadow: 0px 1px 5px #0009;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6);
 }
-
 body .container #play #board .player .deck .card img {
   width: 100%;
   height: 100%;
 }
-
 body .container #rule {
   text-align: center;
   display: none;
   color: aliceblue;
-  background-color: #0009;
+  background-color: rgba(0, 0, 0, 0.6);
 }
-
+body .container #rule .card img {
+  width: 10%;
+  height: 10%;
+}
 body .container #win {
   display: none;
 }
-
 body .container #lose {
   display: none;
 }
@@ -283,32 +211,27 @@ body .container #lose {
 @-webkit-keyframes slide-out-anim {
   20% {
     opacity: 1;
-    -webkit-transform: translateX(-15%);
-            transform: translateX(-15%);
+    transform: translateX(-15%);
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(200%);
-            transform: translateX(200%);
+    transform: translateX(200%);
   }
 }
 
 @keyframes slide-out-anim {
   20% {
     opacity: 1;
-    -webkit-transform: translateX(-15%);
-            transform: translateX(-15%);
+    transform: translateX(-15%);
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translateX(200%);
-            transform: translateX(200%);
+    transform: translateX(200%);
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
