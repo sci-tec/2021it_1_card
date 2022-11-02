@@ -40,7 +40,7 @@ export default {
 
     initPlayers: function() {
         for (let i = 0; i < CONFIG.NUM_PLAYERS; i++) {
-            let player = this.getNewPlayer(i, "player" + i);
+            let player = this.getNewPlayer(i, "player" + (i+1));
             for (let j = 0; j < CONFIG.NUM_INITIAL_CARDS; j++) {
                 let r = Math.floor(Math.random() * this.cards.length);
                 let card = this.cards.splice(r, 1)[0];
@@ -74,6 +74,9 @@ export default {
         if(this.getPlayerById(id).winlose = "lose") {
             this.losePlayers.push(this.getPlayerById(id));
             this.setCoverByPlayerId(id);
+            setTimeout(()=>{
+                $("#lose").css("display", "block");
+            }, 4000);        
         }
         console.log("losePlayer", this.losePlayers);
 
@@ -92,18 +95,30 @@ export default {
          } else {
             this.currentPlayer = this.players[nextId]
          }
-         
          return nextId;
     },
 
+    getNextPlayerId: function(){
+        let nextId = ( this.currentPlayer.id + 1) % this.players.length
+         console.log("currentid", this.currentPlayer.id)
+     
+         while (this.players[nextId].winlose == "lose") {
+            nextId = (nextId + 1) % this.players.length
+         }
+         return nextId;
+    },
+    
     setPlayerWinById: function(id) {
         this.getPlayerById(id).winlose = "win";
         if(this.getPlayerById(id).winlose = "win") {
             this.winPlayers.push(this.getPlayerById(id));
             this.setCoverByPlayerId(id);
+            setTimeout(()=>{
+                $("#win").css("display", "block");
+            }, 4000);
         }    
 
-        this.coverAll("ゲーム終了")
+        this.coverAll("ゲーム終了");
     },
     
     getPlayerIdByCardId: function(Id) {
@@ -149,11 +164,13 @@ export default {
             this.setCoverByPlayerId(this.players[i].id, true);
         }
     },
+
     hideCoverAll: function() {
         for (let i = 0; i < this.players.length; i++) {
             this.setCoverByPlayerId(this.players[i].id, false);
         }
     },
+
     coverWithoutCurrentPlayer: function() {
         for (let i = 0; i < this.players.length; i++) {
             if(this.players[i]!=this.currentPlayer) {
@@ -162,4 +179,3 @@ export default {
         }
     },
 };
-

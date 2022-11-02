@@ -9,6 +9,10 @@ export default function() {
         time: 4000
     })
 
-    G.players[G.currentPlayer.id].winlose = "lose";
+    G.setPlayerLoseById(G.currentPlayer.id);
+
+    setTimeout(()=>{
+        $("#lose").css("display", "block");
+    }, 4000);
 
 }
