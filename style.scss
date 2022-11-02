@@ -31,6 +31,10 @@ body {
         box-sizing: border-box;
     }
 
+    #rule{
+        overflow: scroll;
+    }
+
     .btn2 {
         margin: 0 auto;
     }
@@ -235,7 +239,13 @@ body {
             display: none;
 
             color: aliceblue;
-            background-color:#0009;          
+            background-color:#0009;
+            .card{
+                img{
+                    width: 10%;
+                    height: 10%;
+                }
+            }
         }
 
         #win {
