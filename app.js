@@ -16,7 +16,6 @@ import { develop } from "./develop.js";
 $(() => {
     init();
     develop();
-
 })
 
 function init() {
@@ -27,13 +26,15 @@ function init() {
     G.reset();
     G.drawCard();
     G.refresh();
-    // $(`.mat`).hide();
 
     addEventListeners();
     clickEvent();
 }
 
 function refresh() {
+
+    showNextPlayer();
+
     for (let i = 0; i < G.players.length; i++) {
 
         // let board = document.getElementById("board");
@@ -53,16 +54,13 @@ function refresh() {
             // console.log(card);
 
             $(`#player${i + 1} .deck`).append(card);
+
         }
     }
+
 }
 
 function addEventListeners() {
-    // let num;
-    // for (let i = 0; i < G.players.length; i++) {
-    //     num  = i + 1
-    // }
-    let n = G.currentPlayer.id + 1
 
     $(document).on('click', '.card', function () {
 
@@ -92,10 +90,6 @@ function addEventListeners() {
         tts(text, 2);
     });
 
-    $("#title .btn").click(()=>{
-        $("#title").hide();
-    });
-
 }
 
 function clickEvent() {
@@ -112,6 +106,11 @@ function clickEvent() {
     $(".btn3").click(()=>{
         $("#title").css("animation", "slide-out-anim 4.0s ease-out forwards");
     });
+
+    $(".btn4").click(()=>{
+        location.reload();
+    });
+
 
 }
 
@@ -206,8 +205,9 @@ function showMessage(option) {
 
     for (let i = 0; i < G.players.length; i++) {
         // console.log(i);
-        let text = `<div class="text" style="font-size: 40px;">${option.text}</div><div class="options"></div>`;
+        let text = `<div>${option.text}</div><div class="options"></div>`;
         $(`#board .text`).html(text);
+        $(`#board .text2`).html(text);
     }
 
     let tm = setInterval(()=>{
@@ -224,16 +224,20 @@ function showMessage(option) {
 function showPreviewCard(card) {
     
     let html;
+    console.log(card);
 
     if(card.canPreview == false) {
         html = `<div class="card" data-cardid = "${card.id}" data-imageid = "${card.imgId}"><div class="title"><img src="${"images/image" + card.imgId + ".jpg"}">${card.title}</div></div>`;
     } else {
-        html = `<div class="card" data-cardid = "${card.id}" data-imageid = "${card.imgId}"><div class="title"><img src="${"images/image" + card.imgId + ".jpg"}">${card.title}</div><div class="text">${card.text}</div></div>`;
+        html = `<div class="card" data-cardid = "${card.id}" data-imageid = "${card.imgId}"><div class="title"><img src="${"images/image" + card.imgId + ".jpg"}">${card.title}</div><div class="text2">${card.text}</div></div>`;
     }
 
     $(`#previewCardUsisng`).html(html);
 }
 
 function showNextPlayer() {
-    G.getNextPlayer(next)
+    let nextPlayer = G.getPlayerById(G.getNextPlayerId()).name;
+    console.log("nextPlayer", nextPlayer);
+
+    $(".nextPlayer").html("NextPlayer ➡ " + nextPlayer);
 }
